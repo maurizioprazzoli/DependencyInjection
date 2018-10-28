@@ -18,7 +18,7 @@ namespace DependencyInjection_Refactoring_Step2_Test
             //IDatabaseService databaseService = new DatabaseServiceThreeParts();
             var databaseServiceMock = new Mock<IDatabaseService>();
             databaseServiceMock.Setup(d => d.GetParts())
-                               .Returns(() => new string[] { "PART1", "PART2", "PART3" });
+                               .Returns(() => new string[] { "PART-1", "PART-2", "PART-3", "PART-4" });
             IDatabaseService databaseService = databaseServiceMock.Object;
 
             PartListCreator p = new PartListCreator(databaseService);
@@ -27,7 +27,7 @@ namespace DependencyInjection_Refactoring_Step2_Test
             var parts = p.GetParts().ToArray();
 
             // Assert
-            Assert.IsTrue(parts.Count() == 3);
+            Assert.IsTrue(parts.Count() == 4);
         }
 
         [TestMethod]

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace DependencyInjection_Refactoring_Step2_Test.Mocks
 {
-    class DatabaseServiceThreeParts : IDatabaseService
+    class DatabaseServiceFourParts : IDatabaseService
     {
         public IEnumerable<string> GetParts()
         {
             // Make database Connection
-            return new string[] { "PART1", "PART2", "PART3"};
+            return new string[] { "PART-1", "PART-2", "PART-3", "PART-4"};
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DependencyInjection
 {
-    class PartListCreator
+    public class PartListCreator
     {
         private DatabaseService _databaseService;
 

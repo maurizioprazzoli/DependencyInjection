@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace DependencyInjection
 {
-    class DatabaseService
+    public class DatabaseService
     {
         public IEnumerable<string> GetParts()
         {
-            // Make database Connection
-            return new string[] { "PART1", "PART2", "PART3"};
+            using (var db = new DependencyInjectionDbContext())
+            {
+                var parts = db.Parts;
+                return parts?.Select(p => p.Code).ToList();
+            }
         }
     }
 }

@@ -1,9 +1,8 @@
-using DependencyInjection_Refactoring_Step2;
-using DependencyInjection_Refactoring_Step2_Test.Mocks;
+using DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 
-namespace DependencyInjection_Refactoring_Step2_Test
+namespace DependencyInjection_Test
 {
     [TestClass]
     public class UnitTest1
@@ -12,8 +11,7 @@ namespace DependencyInjection_Refactoring_Step2_Test
         public void AssertPartListCreatorReturnCorrectNumberOfParts()
         {
             // Arrange
-            IDatabaseService databaseService = new DatabaseServiceFourParts();
-            PartListCreator p = new PartListCreator(databaseService);
+            PartListCreator p = new PartListCreator();
 
             // Act 
             var parts = p.GetParts().ToArray();
@@ -26,8 +24,7 @@ namespace DependencyInjection_Refactoring_Step2_Test
         public void AssertPartListCreatorReturnCorrectNumberOfPartsWhenPartsAreNotPresents()
         {
             // Arrange
-            IDatabaseService databaseService = new DatabaseServiceEmptyParts();
-            PartListCreator p = new PartListCreator(databaseService);
+            PartListCreator p = new PartListCreator();
 
             // Act 
             var parts = p.GetParts().ToArray();
