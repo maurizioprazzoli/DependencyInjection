@@ -15,7 +15,7 @@ namespace DependencyInjection_Refactoring_Step2_Test
         public void AssertPartListCreatorReturnCorrectNumberOfParts()
         {
             // Arrange
-            //IDatabaseService databaseService = new DatabaseServiceThreeParts();
+            //IDatabaseService databaseService = new DatabaseServiceFourParts();
             var databaseServiceMock = new Mock<IDatabaseService>();
             databaseServiceMock.Setup(d => d.GetParts())
                                .Returns(() => new string[] { "PART-1", "PART-2", "PART-3", "PART-4" });
